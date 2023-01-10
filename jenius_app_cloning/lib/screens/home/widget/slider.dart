@@ -55,7 +55,7 @@ class SliderMenu extends StatelessWidget {
             items: [
               _SliderCard("coin", "Transaksi Lebih Lengkap",
                   "Kini bisa kirim, terima, jual\nbeli mata uang asing."),
-              _SliderCard("invest", "Berinvestasi Dengan\Jenius",
+              _SliderCard("invest", "Berinvestasi Dengan\nJenius",
                   "Tumbuhkan uang kini lebih\nsimpel. Yuk mulai!"),
               _SliderCard("gift", "X-Card Edisi Spesial",
                   "Life in x-Card khusus\nuntukmu & orang tercinta."),
@@ -248,7 +248,7 @@ class SliderMenu extends StatelessWidget {
       child: Row(
         children: [
           Padding(
-            padding: const EdgeInsets.only(left: 10),
+            padding: const EdgeInsets.only(left: 5),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -266,7 +266,7 @@ class SliderMenu extends StatelessWidget {
               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(left: 40),
+                    padding: const EdgeInsets.only(left: 10),
                     child: Text(
                       "$text1",
                       style: TextStyle(fontSize: 20, color: Colors.white),
