@@ -13,7 +13,7 @@ class MainMenu extends StatelessWidget {
       margin: EdgeInsets.all(22),
       child: SizedBox(
         width: 448,
-        height: 220,
+        height: 230,
         child: Container(
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
@@ -170,7 +170,7 @@ class MainMenu extends StatelessWidget {
                         Column(
                           children: [
                             Text(
-                              "belum terhubung\nke m-card",
+                              "Belum terhubung\nke m-card",
                               style: TextStyle(fontSize: 16, color: TextColor),
                             ),
                           ],

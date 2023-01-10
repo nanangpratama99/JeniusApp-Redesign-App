@@ -5,14 +5,15 @@ class SearchInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      decoration: BoxDecoration(),
       child: Stack(
         children: [
           Container(
             margin: EdgeInsets.all(25),
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
-                border:
-                    Border.all(color: TextColor.withOpacity(0.1), width: 2)),
+              borderRadius: BorderRadius.circular(15),
+              border: Border.all(color: TextColor.withOpacity(0.1), width: 2),
+            ),
             child: TextField(
               cursorColor: TextColor,
               decoration: InputDecoration(
@@ -30,7 +31,7 @@ class SearchInput extends StatelessWidget {
             child: Container(
               decoration: BoxDecoration(
                 color: PrimColor,
-                borderRadius: BorderRadius.circular(10),
+                borderRadius: BorderRadius.circular(12),
               ),
               child: Image.asset(
                 'assets/images/search.png',

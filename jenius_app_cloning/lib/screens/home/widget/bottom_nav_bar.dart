@@ -307,14 +307,14 @@ class ButtomNavBar extends StatelessWidget {
                                           Column(
                                             children: [
                                               Text(
-                                                "Nanang Bussiness",
+                                                "Akun Bussiness",
                                                 style: TextStyle(
                                                     fontSize: 20,
                                                     fontWeight: FontWeight.bold,
                                                     color: Colors.black),
                                               ),
                                               Text(
-                                                "\$nanangpratama                ",
+                                                "\$nanangpr                      ",
                                               ),
                                             ],
                                           ),
@@ -322,7 +322,7 @@ class ButtomNavBar extends StatelessWidget {
                                             children: [
                                               Padding(
                                                 padding:
-                                                    EdgeInsets.only(left: 140),
+                                                    EdgeInsets.only(left: 44),
                                               ),
                                               IconButton(
                                                 onPressed: () {},
@@ -364,7 +364,7 @@ class ButtomNavBar extends StatelessWidget {
                                             children: [
                                               Padding(
                                                 padding:
-                                                    EdgeInsets.only(left: 180),
+                                                    EdgeInsets.only(left: 50),
                                               ),
                                               IconButton(
                                                 onPressed: () {},

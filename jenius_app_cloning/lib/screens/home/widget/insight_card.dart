@@ -48,10 +48,8 @@ class InsightCard extends StatelessWidget {
                       style:
                           TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
-                    Image.asset(
-                      "assets/images/more.png",
-                      width: 15,
-                    )
+                    IconButton(
+                        onPressed: () {}, icon: Icon(Icons.arrow_forward_ios))
                   ],
                 ),
                 SizedBox(

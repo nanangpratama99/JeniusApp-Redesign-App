@@ -43,6 +43,7 @@ class HomePage extends StatelessWidget {
 
   AppBar _buildAppBar() {
     return AppBar(
+      shadowColor: Colors.black,
       backgroundColor: BgColor,
       elevation: 0,
       centerTitle: false,
