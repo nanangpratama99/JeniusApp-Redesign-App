@@ -232,6 +232,159 @@ class ButtomNavBar extends StatelessWidget {
                   text: 'Cards',
                 ),
                 GButton(
+                  onPressed: () {
+                    showModalBottomSheet(
+                      context: context,
+                      shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(25.0),
+                          topRight: Radius.circular(25.0),
+                        ),
+                      ),
+                      builder: (context) {
+                        return SizedBox(
+                          height: 300,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisSize: MainAxisSize.min,
+                            children: <Widget>[
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Center(
+                                child: Container(
+                                  width: 50,
+                                  height: 4,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.only(
+                                      topRight: Radius.circular(20),
+                                      topLeft: Radius.circular(20),
+                                      bottomLeft: Radius.circular(20),
+                                      bottomRight: Radius.circular(20),
+                                    ),
+                                  ),
+                                  padding:
+                                      EdgeInsets.only(bottom: 150, right: 150),
+                                ),
+                              ),
+                              Container(
+                                margin: EdgeInsets.all(40),
+                                child: Container(
+                                  child: Column(
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Text(
+                                            "Beralih Akun",
+                                            style: TextStyle(
+                                                color: TextColor, fontSize: 25),
+                                          ),
+                                          SizedBox(
+                                            width: 7,
+                                          ),
+                                          Icon(
+                                            Icons
+                                                .swap_horizontal_circle_outlined,
+                                            color: Colors.grey,
+                                          )
+                                        ],
+                                      ),
+                                      SizedBox(
+                                        height: 15,
+                                      ),
+
+                                      // BUSSINES ACCOUNT
+                                      Row(
+                                        children: [
+                                          Image.asset(
+                                            "assets/images/account.png",
+                                            width: 60,
+                                          ),
+                                          SizedBox(
+                                            width: 10,
+                                          ),
+                                          Column(
+                                            children: [
+                                              Text(
+                                                "Nanang Bussiness",
+                                                style: TextStyle(
+                                                    fontSize: 20,
+                                                    fontWeight: FontWeight.bold,
+                                                    color: Colors.black),
+                                              ),
+                                              Text(
+                                                "\$nanangpratama                ",
+                                              ),
+                                            ],
+                                          ),
+                                          Row(
+                                            children: [
+                                              Padding(
+                                                padding:
+                                                    EdgeInsets.only(left: 140),
+                                              ),
+                                              IconButton(
+                                                onPressed: () {},
+                                                icon: Icon(
+                                                    Icons.arrow_forward_ios),
+                                              )
+                                            ],
+                                          )
+                                        ],
+                                      ),
+
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+
+                                      // PERSONAL ACCOUNT
+                                      Row(
+                                        children: [
+                                          Image.asset(
+                                            "assets/images/account.png",
+                                            width: 60,
+                                          ),
+                                          SizedBox(
+                                            width: 10,
+                                          ),
+                                          Column(
+                                            children: [
+                                              Text(
+                                                "Akun Personal",
+                                                style: TextStyle(
+                                                    fontSize: 20,
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
+                                              Text("\$nanangpratama     "),
+                                            ],
+                                          ),
+                                          Row(
+                                            children: [
+                                              Padding(
+                                                padding:
+                                                    EdgeInsets.only(left: 180),
+                                              ),
+                                              IconButton(
+                                                onPressed: () {},
+                                                icon: Icon(
+                                                    Icons.arrow_forward_ios),
+                                              )
+                                            ],
+                                          )
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        );
+                      },
+                    );
+                  },
                   icon: Icons.person,
                   text: 'Profil',
                 ),

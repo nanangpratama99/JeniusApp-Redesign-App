@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:jenius_app_cloning/constatns/colors.dart';
@@ -12,7 +13,7 @@ class MainMenu extends StatelessWidget {
       margin: EdgeInsets.all(22),
       child: SizedBox(
         width: 448,
-        height: 200,
+        height: 220,
         child: Container(
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
@@ -50,7 +51,8 @@ class MainMenu extends StatelessWidget {
                   children: [
                     Text(
                       'Rp',
-                      style: TextStyle(fontSize: 20),
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                     SizedBox(
                       width: 20,
@@ -124,6 +126,24 @@ class MainMenu extends StatelessWidget {
                       child: SizedBox(
                         width: 20,
                         height: 20,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 3),
+                      child: Row(
+                        children: [
+                          IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.remove_red_eye_outlined,
+                              size: 35,
+                              color: Colors.grey,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                     SizedBox(

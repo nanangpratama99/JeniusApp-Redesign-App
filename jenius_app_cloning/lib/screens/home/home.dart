@@ -58,7 +58,11 @@ class HomePage extends StatelessWidget {
               width: 3,
             ),
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Container(
+                  child: AlertDialog(),
+                );
+              },
               icon: Icon(
                 Icons.expand_circle_down,
                 color: Colors.grey,
