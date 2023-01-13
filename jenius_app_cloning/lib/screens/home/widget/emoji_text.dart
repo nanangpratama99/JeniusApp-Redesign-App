@@ -7,7 +7,7 @@ class EmojiText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(left: 25, top: 25),
+      padding: EdgeInsets.only(left: 23, top: 25),
       child: Text(
         'Hai, Apa Kabar\nNanang',
         style: TextStyle(

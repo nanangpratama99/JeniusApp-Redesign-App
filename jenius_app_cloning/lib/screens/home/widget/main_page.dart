@@ -10,10 +10,10 @@ class MainMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(22),
+      margin: EdgeInsets.only(top: 5, left: 20, right: 20, bottom: 20),
       child: SizedBox(
         width: 448,
-        height: 230,
+        height: 250,
         child: Container(
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
@@ -21,7 +21,7 @@ class MainMenu extends StatelessWidget {
           child: Column(
             children: [
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -36,9 +36,12 @@ class MainMenu extends StatelessWidget {
                           "Lihat in & Out ",
                           style: TextStyle(fontSize: 20, color: PrimColor),
                         ),
-                        Image.asset(
-                          'assets/images/more.png',
-                          width: 20,
+                        IconButton(
+                          onPressed: () {},
+                          icon: Image.asset(
+                            'assets/images/more.png',
+                            width: 20,
+                          ),
                         )
                       ],
                     ),
@@ -46,7 +49,7 @@ class MainMenu extends StatelessWidget {
                 ),
               ),
               Container(
-                margin: EdgeInsets.all(20),
+                margin: EdgeInsets.only(left: 20, top: 20),
                 child: Row(
                   children: [
                     Text(
@@ -131,20 +134,17 @@ class MainMenu extends StatelessWidget {
                     SizedBox(
                       width: 20,
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 3),
-                      child: Row(
-                        children: [
-                          IconButton(
-                            onPressed: () {},
-                            icon: Icon(
-                              Icons.remove_red_eye_outlined,
-                              size: 35,
-                              color: Colors.grey,
-                            ),
+                    Row(
+                      children: [
+                        IconButton(
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.remove_red_eye_outlined,
+                            size: 35,
+                            color: Colors.grey,
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                     SizedBox(
                       width: 10,
@@ -156,7 +156,7 @@ class MainMenu extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
-                    margin: EdgeInsets.only(left: 10),
+                    margin: EdgeInsets.only(left: 10, top: 30),
                     child: Row(
                       children: [
                         Column(

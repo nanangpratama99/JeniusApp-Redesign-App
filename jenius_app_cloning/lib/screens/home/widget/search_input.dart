@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:jenius_app_cloning/constatns/colors.dart';
 
 class SearchInput extends StatelessWidget {
+  final emailController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -15,6 +16,10 @@ class SearchInput extends StatelessWidget {
               border: Border.all(color: TextColor.withOpacity(0.1), width: 2),
             ),
             child: TextField(
+              onSubmitted: (value) {
+                print(value);
+              },
+              controller: emailController,
               cursorColor: TextColor,
               decoration: InputDecoration(
                   fillColor: TextColor.withOpacity(0.1),
@@ -33,9 +38,14 @@ class SearchInput extends StatelessWidget {
                 color: PrimColor,
                 borderRadius: BorderRadius.circular(12),
               ),
-              child: Image.asset(
-                'assets/images/search.png',
-                width: 40,
+              child: IconButton(
+                onPressed: () {
+                  emailController;
+                },
+                icon: Image.asset(
+                  'assets/images/search.png',
+                  width: 40,
+                ),
               ),
             ),
           )

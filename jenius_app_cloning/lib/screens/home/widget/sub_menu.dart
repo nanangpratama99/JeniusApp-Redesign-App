@@ -11,9 +11,12 @@ class SubMenu extends StatelessWidget {
         children: [
           Column(
             children: [
-              Image.asset(
-                'assets/images/pindai.png',
-                width: 30,
+              IconButton(
+                onPressed: () {},
+                icon: Image.asset(
+                  'assets/images/pindai.png',
+                  width: 30,
+                ),
               ),
               SizedBox(
                 height: 7,
@@ -24,9 +27,12 @@ class SubMenu extends StatelessWidget {
           ),
           Column(
             children: [
-              Image.asset(
-                'assets/images/transfer.png',
-                width: 30,
+              IconButton(
+                onPressed: () {},
+                icon: Image.asset(
+                  'assets/images/transfer.png',
+                  width: 30,
+                ),
               ),
               SizedBox(
                 height: 7,
@@ -37,9 +43,12 @@ class SubMenu extends StatelessWidget {
           ),
           Column(
             children: [
-              Image.asset(
-                'assets/images/tagih.png',
-                width: 30,
+              IconButton(
+                onPressed: () {},
+                icon: Image.asset(
+                  'assets/images/tagih.png',
+                  width: 30,
+                ),
               ),
               SizedBox(
                 height: 7,
@@ -50,9 +59,12 @@ class SubMenu extends StatelessWidget {
           ),
           Column(
             children: [
-              Image.asset(
-                'assets/images/scan.png',
-                width: 30,
+              IconButton(
+                onPressed: () {},
+                icon: Image.asset(
+                  'assets/images/scan.png',
+                  width: 30,
+                ),
               ),
               SizedBox(
                 height: 7,

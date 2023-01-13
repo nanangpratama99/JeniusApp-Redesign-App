@@ -61,26 +61,38 @@ class InsightCard extends StatelessWidget {
                   color: PrimColor,
                 ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Image.asset("assets/images/grafik.png"),
+                        Image.asset(
+                          "assets/images/grafik.png",
+                          width: 85,
+                        ),
                       ],
                     ),
                     SizedBox(
                       width: 10,
                     ),
                     Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Row(
                           children: [
                             Text(
-                              "Pengeluaranmu\n01 Jan 2023 - 06 Jan 2023",
+                              "Pengeluaranmu",
                               style: TextStyle(
                                   color: Colors.black.withOpacity(0.5),
                                   fontSize: 20),
                             ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Row(
+                          children: [
+                            Text("01 Jan 2023 - 06 Jan 2023"),
                           ],
                         ),
                         SizedBox(
@@ -89,7 +101,7 @@ class InsightCard extends StatelessWidget {
                         Row(
                           children: [
                             Text(
-                              "Rp.799.500                 ",
+                              "Rp.799.500",
                               style: TextStyle(
                                   color: Colors.black.withOpacity(0.9),
                                   fontSize: 25),

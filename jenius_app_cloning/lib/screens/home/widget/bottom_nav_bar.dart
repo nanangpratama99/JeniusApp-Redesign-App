@@ -3,10 +3,19 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:jenius_app_cloning/constatns/colors.dart';
+import 'package:jenius_app_cloning/screens/home/home.dart';
+import 'package:jenius_app_cloning/screens/home/widget/cards_menu.dart';
+import 'package:jenius_app_cloning/screens/home/widget/wealth_page.dart';
 
-class ButtomNavBar extends StatelessWidget {
-  const ButtomNavBar({super.key});
+class MyButtomNavBar extends StatefulWidget {
+  MyButtomNavBar({super.key, required this.pcontroller});
+  PageController pcontroller;
 
+  @override
+  State<MyButtomNavBar> createState() => _MyButtomNavBarState();
+}
+
+class _MyButtomNavBarState extends State<MyButtomNavBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -15,8 +24,6 @@ class ButtomNavBar extends StatelessWidget {
         left: 10,
         right: 10,
       ),
-
-      // const EdgeInsets.only(left: 20, right: 20, bottom: 10, top: 20),
 
       // ======================
       // BOTTOM NAVIGATION BAR
@@ -39,6 +46,7 @@ class ButtomNavBar extends StatelessWidget {
           padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
           child: SafeArea(
             child: GNav(
+              // selectedIndex: widget.pcontroller.,
               // backgroundColor: Colors.grey.shade300,
               haptic: true,
               tabBorderRadius: 17,
@@ -61,13 +69,23 @@ class ButtomNavBar extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 15, vertical: 9),
               tabs: [
                 GButton(
+                  onPressed: () {
+                    // Navigator.pushNamed(context, HomePage.nameRoute);
+                    widget.pcontroller.jumpToPage(0);
+                  },
                   icon: Icons.home,
                   text: 'Home',
                 ),
                 GButton(
+                  onPressed: () {
+                    // Navigator.of(context).pushNamed(WealthPage.nameRoute);
+                    widget.pcontroller.jumpToPage(1);
+                  },
                   icon: Icons.health_and_safety,
                   text: 'Wealth',
                 ),
+
+                // <------------ SHOW MODAL BOTTOM MENU --------------->
                 GButton(
                   onPressed: () {
                     return showModalBottomSheet(
@@ -120,9 +138,12 @@ class ButtomNavBar extends StatelessWidget {
                                   children: [
                                     Column(
                                       children: [
-                                        Image.asset(
-                                          "assets/images/pindahsaldo.png",
-                                          width: 50,
+                                        IconButton(
+                                          onPressed: () {},
+                                          icon: Image.asset(
+                                            "assets/images/pindahsaldo.png",
+                                            width: 40,
+                                          ),
                                         ),
                                         Text(
                                           "Pindahkan",
@@ -136,9 +157,10 @@ class ButtomNavBar extends StatelessWidget {
                                     ),
                                     Column(
                                       children: [
-                                        Image.asset(
-                                          "assets/images/send2.png",
-                                          width: 37,
+                                        IconButton(
+                                          onPressed: () {},
+                                          icon: Image.asset(
+                                              "assets/images/send2.png"),
                                         ),
                                         Text(
                                           "Send it",
@@ -148,9 +170,10 @@ class ButtomNavBar extends StatelessWidget {
                                     ),
                                     Column(
                                       children: [
-                                        Image.asset(
-                                          "assets/images/scan2.png",
-                                          width: 50,
+                                        IconButton(
+                                          onPressed: () {},
+                                          icon: Image.asset(
+                                              "assets/images/scan2.png"),
                                         ),
                                         Text(
                                           "Scan Q-RIS",
@@ -169,7 +192,6 @@ class ButtomNavBar extends StatelessWidget {
                               // ======================
                               // BARIS MENU ATAS
                               // =======================
-
                               Container(
                                 child: Row(
                                   mainAxisAlignment:
@@ -177,9 +199,10 @@ class ButtomNavBar extends StatelessWidget {
                                   children: [
                                     Column(
                                       children: [
-                                        Image.asset(
-                                          "assets/images/wallet.png",
-                                          width: 40,
+                                        IconButton(
+                                          onPressed: () {},
+                                          icon: Image.asset(
+                                              "assets/images/wallet.png"),
                                         ),
                                         Text(
                                           "e-Wallet",
@@ -193,9 +216,10 @@ class ButtomNavBar extends StatelessWidget {
                                     ),
                                     Column(
                                       children: [
-                                        Image.asset(
-                                          "assets/images/bill.png",
-                                          width: 50,
+                                        IconButton(
+                                          onPressed: () {},
+                                          icon: Image.asset(
+                                              "assets/images/bill.png"),
                                         ),
                                         Text(
                                           "Bayar Tagihan",
@@ -205,9 +229,10 @@ class ButtomNavBar extends StatelessWidget {
                                     ),
                                     Column(
                                       children: [
-                                        Image.asset(
-                                          "assets/images/add.png",
-                                          width: 40,
+                                        IconButton(
+                                          onPressed: () {},
+                                          icon: Image.asset(
+                                              "assets/images/add.png"),
                                         ),
                                         Text(
                                           "Tagih Uang",
@@ -225,168 +250,22 @@ class ButtomNavBar extends StatelessWidget {
                     );
                   },
                   icon: Icons.dashboard,
-                  text: '',
+                  text: 'Menu',
                 ),
                 GButton(
                   icon: Icons.card_giftcard,
                   text: 'Cards',
+                  onPressed: () {
+                    // Navigator.of(context).pushNamed(Cards.nameRoute);
+                    widget.pcontroller.jumpToPage(2);
+                  },
                 ),
                 GButton(
                   onPressed: () {
-                    showModalBottomSheet(
-                      context: context,
-                      shape: const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(25.0),
-                          topRight: Radius.circular(25.0),
-                        ),
-                      ),
-                      builder: (context) {
-                        return SizedBox(
-                          height: 300,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisSize: MainAxisSize.min,
-                            children: <Widget>[
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Center(
-                                child: Container(
-                                  width: 50,
-                                  height: 4,
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.only(
-                                      topRight: Radius.circular(20),
-                                      topLeft: Radius.circular(20),
-                                      bottomLeft: Radius.circular(20),
-                                      bottomRight: Radius.circular(20),
-                                    ),
-                                  ),
-                                  padding:
-                                      EdgeInsets.only(bottom: 150, right: 150),
-                                ),
-                              ),
-                              Container(
-                                margin: EdgeInsets.all(40),
-                                child: Container(
-                                  child: Column(
-                                    children: [
-                                      Row(
-                                        children: [
-                                          Text(
-                                            "Beralih Akun",
-                                            style: TextStyle(
-                                                color: TextColor, fontSize: 25),
-                                          ),
-                                          SizedBox(
-                                            width: 7,
-                                          ),
-                                          Icon(
-                                            Icons
-                                                .swap_horizontal_circle_outlined,
-                                            color: Colors.grey,
-                                          )
-                                        ],
-                                      ),
-                                      SizedBox(
-                                        height: 15,
-                                      ),
-
-                                      // BUSSINES ACCOUNT
-                                      Row(
-                                        children: [
-                                          Image.asset(
-                                            "assets/images/account.png",
-                                            width: 60,
-                                          ),
-                                          SizedBox(
-                                            width: 10,
-                                          ),
-                                          Column(
-                                            children: [
-                                              Text(
-                                                "Akun Bussiness",
-                                                style: TextStyle(
-                                                    fontSize: 20,
-                                                    fontWeight: FontWeight.bold,
-                                                    color: Colors.black),
-                                              ),
-                                              Text(
-                                                "\$nanangpr                      ",
-                                              ),
-                                            ],
-                                          ),
-                                          Row(
-                                            children: [
-                                              Padding(
-                                                padding:
-                                                    EdgeInsets.only(left: 44),
-                                              ),
-                                              IconButton(
-                                                onPressed: () {},
-                                                icon: Icon(
-                                                    Icons.arrow_forward_ios),
-                                              )
-                                            ],
-                                          )
-                                        ],
-                                      ),
-
-                                      SizedBox(
-                                        height: 10,
-                                      ),
-
-                                      // PERSONAL ACCOUNT
-                                      Row(
-                                        children: [
-                                          Image.asset(
-                                            "assets/images/account.png",
-                                            width: 60,
-                                          ),
-                                          SizedBox(
-                                            width: 10,
-                                          ),
-                                          Column(
-                                            children: [
-                                              Text(
-                                                "Akun Personal",
-                                                style: TextStyle(
-                                                    fontSize: 20,
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                              ),
-                                              Text("\$nanangpratama     "),
-                                            ],
-                                          ),
-                                          Row(
-                                            children: [
-                                              Padding(
-                                                padding:
-                                                    EdgeInsets.only(left: 50),
-                                              ),
-                                              IconButton(
-                                                onPressed: () {},
-                                                icon: Icon(
-                                                    Icons.arrow_forward_ios),
-                                              )
-                                            ],
-                                          )
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        );
-                      },
-                    );
+                    // <------- MODAL BOTTOM DIALOG AKUN ------------>
                   },
                   icon: Icons.person,
-                  text: 'Profil',
+                  text: 'Akun',
                 ),
               ],
             ),

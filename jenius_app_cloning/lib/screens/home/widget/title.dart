@@ -17,10 +17,13 @@ class SubTitle extends StatelessWidget {
             style: TextStyle(
                 fontSize: 20, fontWeight: FontWeight.bold, color: TextColor),
           ),
-          Icon(
-            Icons.add,
-            size: 30,
-            color: TextColor,
+          IconButton(
+            onPressed: () {},
+            icon: Icon(
+              Icons.add,
+              size: 30,
+              color: Colors.black.withOpacity(0.8),
+            ),
           )
         ],
       ),
